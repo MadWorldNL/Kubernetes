@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: madworld-identity-admin-web-deployment
-  namespace: MadWorldNL
+  namespace: madworldnl
   labels:
     app: madworld-identity-admin-web
     name: identity-admin-web
@@ -42,7 +42,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: madworld-identity-admin-web-loadbalancer
-  namespace: MadWorldNL
+  namespace: madworldnl
 spec:
   selector:
     app: madworld-identity-admin-web
