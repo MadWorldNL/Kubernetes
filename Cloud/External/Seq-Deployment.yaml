@@ -13,6 +13,7 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
+  # chmod 777 -R /home/oveldman/MadWorldNL_Storage/Seq
   hostPath:
     path: "/home/oveldman/MadWorldNL_Storage/Seq"
 ---

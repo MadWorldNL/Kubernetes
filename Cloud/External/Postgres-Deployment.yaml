@@ -24,6 +24,7 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
+  # chmod 777 -R /home/oveldman/MadWorldNL_Storage/Postgres
   hostPath:
     path: "/home/oveldman/MadWorldNL_Storage/Postgres"
 ---
