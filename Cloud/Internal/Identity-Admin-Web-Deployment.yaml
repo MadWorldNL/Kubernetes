@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: madworld-identity-admin-web-deployment
+  namespace: MadWorldNL
+  labels:
+    app: madworld-identity-admin-web
+    name: identity-admin-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: madworld-identity-admin-web
+      task: identity-admin-web
+  template:
+    metadata:
+      labels:
+        app: madworld-identity-admin-web
+        task: identity-admin-web
+    spec:
+      containers:
+        - name: madworld-identity-admin-web
+          image: ghcr.io/madworldnl/identity-admin-web:latest
+          args:
+            - /server
+          env:
+            - name: DbContext__Password
+              valueFrom:
+                secretKeyRef:
+                  name: madworld-secrets
+                  key: dbpassword
+            - name: JwtSettings__Key
+              valueFrom:
+                secretKeyRef:
+                  name: madworld-secrets
+                  key: jwtkey
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: madworld-identity-admin-web-loadbalancer
+  namespace: MadWorldNL
+spec:
+  selector:
+    app: madworld-identity-admin-web
+    task: identity-admin-web
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8082
+      targetPort: 80
+  type: LoadBalancer

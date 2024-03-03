@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: madworld-identity-grpc-deployment
+  namespace: MadWorldNL
+  labels:
+    app: madworld-identity-grpc
+    name: identity-grpc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: madworld-identity-grpc
+      task: identity-grpc
+  template:
+    metadata:
+      labels:
+        app: madworld-identity-grpc
+        task: identity-grpc
+    spec:
+      containers:
+        - name: madworld-identity-grpc
+          image: ghcr.io/madworldnl/identity-backend:latest
+          args:
+            - /server
+          env:
+            - name: DbContext__Password
+              valueFrom:
+                secretKeyRef:
+                  name: madworld-secrets
+                  key: dbpassword
+            - name: JwtSettings__Key
+              valueFrom:
+                secretKeyRef:
+                  name: madworld-secrets
+                  key: jwtkey
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: madworld-identity-grpc-loadbalancer
+  namespace: MadWorldNL
+spec:
+  selector:
+    app: madworld-identity-grpc
+    task: identity-grpc
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8081
+      targetPort: 80
+  type: LoadBalancer
