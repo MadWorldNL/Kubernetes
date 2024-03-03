@@ -34,6 +34,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{3D8F102B-D1F2-42E9-BA14-D0D4C2CEADE0}"
 	ProjectSection(SolutionItems) = preProject
 		Cloud\Scripts\prod-deploy-kubernetes.sh = Cloud\Scripts\prod-deploy-kubernetes.sh
+		Cloud\Scripts\prod-refresh-pods.sh = Cloud\Scripts\prod-refresh-pods.sh
 	EndProjectSection
 EndProject
 Global
