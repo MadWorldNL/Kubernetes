@@ -58,7 +58,7 @@ spec:
             - name: ACCEPT_EULA
               value: "Y"
             - name: SEQ_FIRSTRUN_ADMINUSERNAME
-              value: "admin"
+              value: "administrator"
             - name: SEQ_FIRSTRUN_ADMINPASSWORDHASH
               valueFrom:
                 secretKeyRef:
