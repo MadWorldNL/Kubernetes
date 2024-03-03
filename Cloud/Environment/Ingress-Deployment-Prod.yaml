@@ -44,7 +44,7 @@ spec:
               service:
                 name: madworld-identity-admin-web-loadbalancer
                 port:
-                  number: 80
+                  number: 8080
     - host: log.mad-world.nl
       http:
         paths:
@@ -54,7 +54,7 @@ spec:
               service:
                 name: seq-loadbalancer
                 port:
-                  number: 80
+                  number: 8080
     - host: www.mad-world.nl
       http:
         paths:
@@ -64,4 +64,4 @@ spec:
               service:
                 name: madworld-identity-admin-web-loadbalancer
                 port:
-                  number: 80
+                  number: 8080
