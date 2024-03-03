@@ -12,6 +12,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-files", "solution-
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{94CFA14E-F266-47FC-BACF-C1578BC4E498}"
+	ProjectSection(SolutionItems) = preProject
+		Cloud\External\Seq-Deployment.yaml = Cloud\External\Seq-Deployment.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Secrets", "Secrets", "{8C7CB2CC-FD15-4132-B942-88999D1AD3E5}"
+	ProjectSection(SolutionItems) = preProject
+		Cloud\Environment\Secrets\Secrets-Local.yaml = Cloud\Environment\Secrets\Secrets-Local.yaml
+		Cloud\Environment\Secrets\Secrets-Prod-Example.yaml = Cloud\Environment\Secrets\Secrets-Prod-Example.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +30,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91764F09-400F-4798-A5ED-1D3F71AE2502} = {9A609747-2C69-4357-8956-82961F386BA2}
+		{94CFA14E-F266-47FC-BACF-C1578BC4E498} = {9A609747-2C69-4357-8956-82961F386BA2}
+		{8C7CB2CC-FD15-4132-B942-88999D1AD3E5} = {91764F09-400F-4798-A5ED-1D3F71AE2502}
 	EndGlobalSection
 EndGlobal
