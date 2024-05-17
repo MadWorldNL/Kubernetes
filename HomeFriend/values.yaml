@@ -7,6 +7,7 @@ hub:
   loadBalancer: "madworldnl-hub-loadbalancer"
   image: "ghcr.io/madworldnl/homefriend-hub"
   tag: "latest"
+  host: "hub.localhost"
   
 portal:
   deployment: "madworldnl-portal-deployment"
@@ -15,3 +16,10 @@ portal:
   loadBalancer: "madworldnl-portal-loadbalancer"
   image: "ghcr.io/madworldnl/homefriend-portal"
   tag: "latest"
+  host: "portal.localhost"
+  
+ingress:
+  name: "madworldnl-ingress"
+  
+hosts:
+  name: "madworldnl-hosts"

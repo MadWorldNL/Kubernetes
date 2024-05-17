@@ -1,1 +1,7 @@
 namespace: "homefriend-development"
+
+hub:
+  host: "hub.localhost"
+  
+portal:
+  host: "portal.localhost"

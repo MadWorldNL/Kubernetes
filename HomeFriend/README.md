@@ -23,3 +23,13 @@ Start minikube
 ```sh
 minikube start
 ```
+
+Open dashboard
+```sh
+minikube dashboard
+```
+
+Setup nginx ingress
+```sh
+minikube addons enable ingress
+```

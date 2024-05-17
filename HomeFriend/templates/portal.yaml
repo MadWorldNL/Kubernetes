@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.portal.app }}
-          image: {{ .Values.portal.image }}":"{{ .Values.portal.tag }}
+          image: "{{ .Values.portal.image }}:{{ .Values.portal.tag }}"
           imagePullPolicy: Always
           ports:
             - containerPort: 80
