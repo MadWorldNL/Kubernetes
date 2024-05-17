@@ -1,0 +1,17 @@
+namespace: "homefriend"
+
+hub:
+  deployment: "madworldnl-hub-deployment"
+  app: "madworldnl-hub"
+  name: "hub"
+  loadBalancer: "madworldnl-hub-loadbalancer"
+  image: "ghcr.io/madworldnl/homefriend-hub"
+  tag: "latest"
+  
+portal:
+  deployment: "madworldnl-portal-deployment"
+  app: "madworldnl-portal"
+  name: "portal"
+  loadBalancer: "madworldnl-portal-loadbalancer"
+  image: "ghcr.io/madworldnl/homefriend-portal"
+  tag: "latest"

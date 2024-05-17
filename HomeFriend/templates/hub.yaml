@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.hub.deployment }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.hub.app }}
+    name: {{ .Values.hub.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.hub.app }}
+      task: {{ .Values.hub.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.hub.app }}
+        task: {{ .Values.hub.name }}
+    spec:
+      containers:
+        - name: {{ .Values.hub.app }}
+          image: {{ .Values.hub.image }}":"{{ .Values.hub.tag }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.hub.loadBalancer }}
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{ .Values.hub.app }}
+    task: {{ .Values.hub.name }}
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
