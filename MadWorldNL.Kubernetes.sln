@@ -1,40 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cloud", "Cloud", "{9A609747-2C69-4357-8956-82961F386BA2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment", "{91764F09-400F-4798-A5ED-1D3F71AE2502}"
-	ProjectSection(SolutionItems) = preProject
-		Cloud\Environment\Ingress-Deployment-Prod.yaml = Cloud\Environment\Ingress-Deployment-Prod.yaml
-		Cloud\Environment\Config.yaml = Cloud\Environment\Config.yaml
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-files", "solution-files", "{321B1EAF-E17F-45C7-BD4E-2BC2D2DC1995}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{94CFA14E-F266-47FC-BACF-C1578BC4E498}"
-	ProjectSection(SolutionItems) = preProject
-		Cloud\External\Seq-Deployment.yaml = Cloud\External\Seq-Deployment.yaml
-		Cloud\External\Postgres-Deployment.yaml = Cloud\External\Postgres-Deployment.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Secrets", "Secrets", "{8C7CB2CC-FD15-4132-B942-88999D1AD3E5}"
-	ProjectSection(SolutionItems) = preProject
-		Cloud\Environment\Secrets\Secrets-Local.yaml = Cloud\Environment\Secrets\Secrets-Local.yaml
-		Cloud\Environment\Secrets\Secrets-Prod-Example.yaml = Cloud\Environment\Secrets\Secrets-Prod-Example.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internal", "Internal", "{7721E566-0F4F-42B6-A085-A75F5FD92813}"
-	ProjectSection(SolutionItems) = preProject
-		Cloud\Internal\Identity-Backend-Deployment.yaml = Cloud\Internal\Identity-Backend-Deployment.yaml
-		Cloud\Internal\Identity-Admin-Web-Deployment.yaml = Cloud\Internal\Identity-Admin-Web-Deployment.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{3D8F102B-D1F2-42E9-BA14-D0D4C2CEADE0}"
-	ProjectSection(SolutionItems) = preProject
-		Cloud\Scripts\prod-deploy-kubernetes.sh = Cloud\Scripts\prod-deploy-kubernetes.sh
-		Cloud\Scripts\prod-refresh-pods.sh = Cloud\Scripts\prod-refresh-pods.sh
 	EndProjectSection
 EndProject
 Global
@@ -43,10 +11,5 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{91764F09-400F-4798-A5ED-1D3F71AE2502} = {9A609747-2C69-4357-8956-82961F386BA2}
-		{94CFA14E-F266-47FC-BACF-C1578BC4E498} = {9A609747-2C69-4357-8956-82961F386BA2}
-		{8C7CB2CC-FD15-4132-B942-88999D1AD3E5} = {91764F09-400F-4798-A5ED-1D3F71AE2502}
-		{7721E566-0F4F-42B6-A085-A75F5FD92813} = {9A609747-2C69-4357-8956-82961F386BA2}
-		{3D8F102B-D1F2-42E9-BA14-D0D4C2CEADE0} = {9A609747-2C69-4357-8956-82961F386BA2}
 	EndGlobalSection
 EndGlobal
