@@ -11,18 +11,18 @@ spec:
       http:
         paths:
         # All the path will be directed to the SPA application
-        - backend:
+        - path: "/(.*(?:css|css.map|html|js|json|png|txt|wasm)$)|(.*)"
+          pathType: ImplementationSpecific
+          backend:
             service:
               name: {{ .Values.portal.loadBalancer }}
               port:
                 number: 80
-          path: "/(.*(?:css|css.map|html|js|json|png|txt|wasm)$)|(.*)"
-          pathType: ImplementationSpecific
     - host: {{ .Values.hub.host }}
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: "/(.*)"
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: {{ .Values.hub.loadBalancer }}
