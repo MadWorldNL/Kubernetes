@@ -11,7 +11,7 @@ spec:
       http:
         paths:
         # All the path will be directed to the SPA application
-        - path: "/(.*(?:css|css.map|html|js|json|png|txt|wasm)$)|(.*)"
+        - path: "/(.*(?:css|css.map|html|js|json|png|txt|wasm|dat)$)|(.*)"
           pathType: ImplementationSpecific
           backend:
             service:
