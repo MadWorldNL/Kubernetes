@@ -1,7 +1,7 @@
 namespace: "homefriend-production"
 
 hub:
-  host: "hub.localhost"
+  host: "hub.homefriend"
 
 portal:
-  host: "portal.localhost"
+  host: "portal.homefriend"
