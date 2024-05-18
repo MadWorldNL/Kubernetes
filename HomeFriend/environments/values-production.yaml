@@ -2,6 +2,8 @@ namespace: "homefriend-production"
 
 hub:
   host: "hub.homefriend"
+  tag: "v0.0.2"
 
 portal:
   host: "portal.homefriend"
+  tag: "v0.0.2"
