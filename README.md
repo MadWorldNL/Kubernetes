@@ -16,7 +16,6 @@ Enable the following features in microk8s
 ```shell
 sudo microk8s enable dashboard
 sudo microk8s enable dns
-sudo microk8s enable registry
 sudo microk8s enable helm
 sudo microk8s enable ingress
 ```
