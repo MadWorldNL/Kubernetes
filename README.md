@@ -37,8 +37,21 @@ sudo systemctl enable systemd-resolved
 sudo systemctl start systemd-resolved
 ```
 
+Setup Pi Hole
+```shell
+curl -sSL https://install.pi-hole.net | bash
+```
+
+* Turn off DHCP in route for IPv4.
+* Set DHCPv6 server on stateless
+* Set IPv6 DNS servers to the local ip of pi hole
+* Turn onn DHCP in pi hole
+* Reboot your router
+* Reboot your devices
+
+
 ## Reference
 [Install Kubernetes](https://ubuntu.com/kubernetes/install)\
 [Install helm](https://helm.sh/docs/intro/install/)\
-[Setup Dnsmasq](https://www.howtogeek.com/devops/how-to-run-your-own-dns-server-on-your-local-network/)\
+[Setup pi hole for dns](https://docs.pi-hole.net/main/basic-install/)\
 [Stop Port 53](https://askubuntu.com/questions/191226/dnsmasq-failed-to-create-listening-socket-for-port-53-address-already-in-use)
