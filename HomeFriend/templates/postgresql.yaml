@@ -1,18 +1,30 @@
+{{- $superuserSecret := (lookup "v1" "Secret" .Values.namespace .Values.secrets.name.superuser ) -}}
 apiVersion: v1
+kind: Secret
 metadata:
   name: {{ .Values.secrets.name.superuser }}
   namespace: {{ .Values.namespace }}
 data:
-  username: Z29k
-  password: cGFzc3dvcmQ=
-kind: Secret
+  {{ if $superuserSecret -}}
+  username: {{ $superuserSecret.data.username }}
+  password: {{ $superuserSecret.data.password }}
+  {{ else -}}
+  username: {{ "god" | b64enc }}
+  password: {{ "passwordV3" | b64enc }}
+  {{ end }}
 type: kubernetes.io/basic-auth
 ---
+{{- $appSecret := (lookup "v1" "Secret" .Values.namespace .Values.secrets.name.app) -}}
 apiVersion: v1
-data:
-  username: YXBw
-  password: cGFzc3dvcmQ=
 kind: Secret
+data:
+  {{ if $appSecret -}}
+  username: {{ $appSecret.data.username }}
+  password: {{ $appSecret.data.password }}
+  {{ else -}}
+  username: {{ "app" | b64enc }}
+  password: {{ "passwordV3" | b64enc }}
+  {{ end }}
 metadata:
   name: {{ .Values.secrets.name.app }}
   namespace: {{ .Values.namespace }}
@@ -49,12 +61,12 @@ spec:
           storage: 1Gi
       storageClassName: standard
       volumeMode: Filesystem
-    walStorage:
-      pvcTemplate:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 1Gi
-        storageClassName: standard
-        volumeMode: Filesystem
+  walStorage:
+    pvcTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: standard
+      volumeMode: Filesystem
