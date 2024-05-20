@@ -18,8 +18,18 @@ portal:
   tag: "latest"
   host: "portal.localhost"
   
+postgresql:
+  app: "madworldnl-postgresql"
+  cluster: "madworldnl-postgresql-cluster"
+  name: "postgresql"
+  
 ingress:
   name: "madworldnl-ingress"
   
 hosts:
   name: "madworldnl-hosts"
+  
+secrets:
+  name:
+    superuser: "postgresql-superuser-secret"
+    app: "postgresql-app-secret"

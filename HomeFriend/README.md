@@ -33,3 +33,12 @@ Setup nginx ingress
 ```sh
 minikube addons enable ingress
 ```
+
+### CloudNative
+```shell
+kubectl apply --server-side -f \
+  https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/release-1.23/releases/cnpg-1.23.1.yaml
+```
+
+## Reference
+[Setup Postgresql](https://cloudnative-pg.io/documentation/1.23/installation_upgrade/)
